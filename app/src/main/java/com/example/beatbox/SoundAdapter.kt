@@ -6,13 +6,13 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.beatbox.databinding.ListItemSoundBinding
 
-class SoundAdapter(private val sounds: List<Sound>) :
+class SoundAdapter(private val sounds: List<Sound>, val beatBox: BeatBox) :
     RecyclerView.Adapter<SoundAdapter.SoundHolder>() {
-    class SoundHolder(private val binding: ListItemSoundBinding) :
+    class SoundHolder(private val binding: ListItemSoundBinding, val beatBox: BeatBox) :
         RecyclerView.ViewHolder(binding.root) {
 
         init {
-            binding.viewModel = SoundViewModel()
+            binding.viewModel = SoundViewModel(beatBox)
         }
 
         fun bind(sound: Sound) {
@@ -30,7 +30,7 @@ class SoundAdapter(private val sounds: List<Sound>) :
             parent,
             false
         )
-        return SoundHolder(binding)
+        return SoundHolder(binding, beatBox)
     }
 
     override fun onBindViewHolder(holder: SoundHolder, position: Int) {

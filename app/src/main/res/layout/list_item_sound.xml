@@ -12,11 +12,12 @@
 
     <Button
         style="@style/BeatBoxButton"
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_margin="8dp"
         android:onClick="@{() -> viewModel.onButtonClicked()}"
         android:text="@{viewModel.title}"
         app:backgroundTint="@null"
         tools:text="Sound name" />
-
 </layout>

@@ -16,6 +16,6 @@
     </style>
 
     <style name="BeatBoxButton">
-        <item name="android:background">@color/dark_blue</item>
+        <item name="android:background">@drawable/button_beat_box</item>
     </style>
 </resources>
